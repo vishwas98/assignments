@@ -1,0 +1,81 @@
+ASSIGNMENT-06
+A bigger solid cube is to be built using n number of smaller cubes, having unit length. Write a program that:
+a)Read n from user with suitable message
+b)Check  if  n  is  valid,  that  is  can  a  bigger  solid  cube  be  build  using  n  number  unit length cubes
+c)Calculate the surface area of bigger cube, s1
+d)One unit length cubic block is now removed from every corner of the cube. Calculate the surface area of new structure, s2
+e)Prints with suitable message, both surface areas s1  and s2
+f)Print what conclusion can be drawn with respect to  s1  and  s2
+ 
+LOGIC BEHIND THE PROBLEM DEFINITION:
+To form a bigger cube from the unit length cubic block , the number of unit length cubic block should be a perfect square.
+After removing unit length cubic block from every corner of the bigger cube.
+The surface area of the body will remain unchanged, it exposes three faces, which makes the number of exposed faces same as before removal.
+
+
+
+PROGRAM : 
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main()
+{
+    int i,number;
+    float s1,s2;
+    //part a
+    printf("Enter the number of smaller cubes: ");
+    scanf("%d",&number);
+    //part b
+    for(i=0;i<=number;i++)
+    {
+        if(number==i*i)
+        {
+            printf("\n %d is a valid number",number);
+        }
+
+    }
+    //part c
+    s1=6*number;
+    printf("\nSurface Area is %f",s1);
+
+    //part d
+    if(number==4)
+        s2=0; // as all blocks removed
+
+    else
+    s2=(6*number)-(8*3)+(8*3);//which is same as 6n
+
+    if(number!=4)
+    {
+        s1=s2;//
+    }
+    else{
+        s1=6*4;
+        s2=0;
+    }
+    //return 0;
+    printf("\ns1\ts2");
+    printf("\n%f\t%f",s1,s2);
+}
+
+OUTPUT : 
+CASE 1: 
+Enter the number of smaller cubes: 4
+
+ 4 is a valid number
+Surface Area is 24.000000
+s1      s2
+24.000000       0.000000
+Process returned 19 (0x13)   execution time : 2.025 s
+Press any key to continue.
+
+
+
+
+
+
+
+
+
+

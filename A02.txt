@@ -1,0 +1,59 @@
+ASSIGNMENT-02
+A straight line in two dimension can be represented with y=mx +c,where y and x are the y and x coordinates
+of the point on line in two dimension space respectively. m is slope of the line and c is intercept made by the
+line with y axis. Write a program that:
+a)Reads from end user using suitable messages :
+    i.Slope m
+    ii.Intercept c
+    iii.Values of x
+b)Reads from end user using suitable messages: a random point (xp ,yp)
+c)Print with suitable message if (xp,yp) is on the line y=mx +c
+
+LOGIC:
+In order for the given point to lie on the line, it must satisfy the equation of the line.
+Check whether y = (m * x) + c holds true.
+
+
+PROGRAM:
+
+#include <stdio.h>
+#include <stdlib.h>
+#include<stdbool.h>
+
+int main()
+{
+    int m=0,c=0,x=0,y=0;
+    //Read the values of m,c,x,y from end user
+    printf("Enter the values of slope m, constant c, x-coordinate, y-coordinate:");
+    scanf("%d %d %d %d",&m,&c,&x,&y);
+    if(point_On_Line(m,c,x,y))
+    {
+        printf("\nThe Point (%d,%d) lies on the line y=mx+c",x,y);
+    }
+    else
+    {
+        printf("\nThe Point (%d,%d) doesn't lies on the line y=mx+c",x,y);
+    }
+    return 0;
+}
+int point_On_Line(int m,int c,int x,int y)
+{
+    // check Whether the values satisfies the standard equation of the line y=mx+c.
+    if(y==(m*x)+c)
+        return 1; //Return 1 if satisfies.
+    else
+        return 0;//Return 0 if it doesn't satisfies.
+}
+
+
+OUTPUT:
+CASE 1:
+Enter the values of slope m, constant c, x-coordinate, y-coordinate:4 6 1 10
+
+The Point (1,10) lies on the line y=mx+c
+Process returned 0 (0x0)   execution time : 19.682 s
+Press any key to continue.
+
+
+
+

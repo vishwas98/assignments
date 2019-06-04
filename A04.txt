@@ -1,0 +1,71 @@
+Assignment 4
+Write a program that:
+a)Reads from end user using suitable messages a integer k , where k represents count of digits in a integer
+b)Find the probability p1, that the k-digit number does NOT contain the digits 0 , 5 , 9
+c)Print with suitable message the probability p1
+d)Now consider digit set as only d = { 0 , 1 , 3 , 4 , 5 , 7 , 9 }
+e)Find the probability p2, that the a k-digit number does NOT contain the digits 0 , 5 , 9
+f)Print with suitable message the probability p2
+g)Print what conclusion can be drawn with respect to  p1  and  p2
+
+LOGIC BEHIND THE PROBLEM DEFINITION:
+Total possibilities =(10)raise to k, because every digit has 10 options from 0 to 9.
+Possibility of not containing any digit 0,5,9=(7)raise to k, now every digit has 7 options.
+probability = (7)raise to k/(10)raise to k=(0.7)
+
+
+PROGRAM:
+#include <stdio.h>
+#include <stdlib.h>
+#include<math.h>
+
+int main()
+{
+    int k;
+    float p,q,r,s;
+    float p1,p2;
+    printf("Enter the value of k which represents the count of digits:\n");
+    scanf("%d",&k);
+    p=pow(10,k);// 10 because every digit has 10 options from 0 to 9.
+    printf("Total number of possibilities are :%.2f\n",p);
+
+    printf("Possibility of not containing any digit 0,5,9 is\n");
+    q=pow(7,k);// 7 because now every digit has 7 options excluding 0,5,9.
+    printf("%.2f\n",q);
+    printf("The p1, that the k-digit number does NOT contain the digits 0 , 5 , 9 is : ");
+    p1=q/p;
+    printf("%.2f\n",p1);
+
+    printf("\nNow considering digit set as only d = { 0 , 1 , 3 , 4 , 5 , 7 , 9 }\n");
+    r=pow(7,k);//7 because total possibilites needs to be choosen between available digit set(which are 7 in number).
+    printf("Total number of possibilities considering digit set as only d = { 0 , 1 , 3 , 4 , 5 , 7 , 9 } is : %.2f\n",r);
+
+    printf("Possibility of not containing any digit 0,5,9 is\n");
+    s=pow(4,k);// 4 because now every digit has 4 options excluding 0,5,9(1,3,4,7 the remaining 4).
+    printf("%.2f\n",s);
+    printf("The probability p2, that the a k-digit number does NOT contain the digits 0 , 5 , 9 is :");
+    p2=s/r;
+    printf("%.2f\n",p2);
+
+    return 0;
+}
+ 
+
+OUTPUT:
+
+CASE 1:
+	Enter the value of k which represents the count of digits:
+4
+Total number of possibilities are :10000.00
+Possibility of not containing any digit 0,5,9 is
+2401.00
+The p1, that the k-digit number does NOT contain the digits 0 , 5 , 9 is : 0.24
+
+Now considering digit set as only d = { 0 , 1 , 3 , 4 , 5 , 7 , 9 }
+Total number of possibilities considering digit set as only d = { 0 , 1 , 3 , 4 , 5 , 7 , 9 } is : 2401.00
+Possibility of not containing any digit 0,5,9 is
+256.00
+The probability p2, that the a k-digit number does NOT contain the digits 0 , 5 , 9 is :0.11
+
+Process returned 0 (0x0)   execution time : 5.349 s
+Press any key to continue.

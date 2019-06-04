@@ -1,0 +1,45 @@
+ASSIGNMENT-03
+
+Consider three dimension system. A point in three dimension system is represented as ( x , y , z )
+where x , y and z are the x , y and z coordinates of the point in three dimension space respectively. Write a program that:
+a)Reads from end user using suitable messages :
+    i.Point p1(x1,y1,z1),and
+    ii.Point p2( x2,y2,z2)
+b)Prints with suitable message all partial derivatives between the points(p1,p2)
+
+LOGIC : 
+Takes input from the user p1&p2 then difference p2-p1 is partial difference.
+
+PROGRAM :
+#include <stdio.h>
+#include <stdlib.h>
+#include<math.h>
+
+int main()
+{
+    int x1,y1,z1,x2,y2,z2,x,y,z;
+    printf("Enter the Co-ordinates of the point p1:\n");//Takes the co-ordinates values of point p1
+    scanf("%d %d %d",&x1,&y1,&z1);
+
+    printf("Enter the Co-ordinates of the point p2:\n");//Takes the co-ordinates values of point p2
+    scanf("%d %d %d",&x2,&y2,&z2);
+
+    x=x2-x1;
+    y=y2-y1;
+    z=z2-z1;
+
+    printf("The function f(a)= %dx+(%dy)+(%dz)",x,y,z);
+    return 0;
+}
+
+
+OUTPUT:
+CASE 1:
+Enter the Co-ordinates of the point p1:
+7 8 9
+Enter the Co-ordinates of the point p2:
+4 5 2
+The function f(a)= -3x+(-3y)+(-7z)
+Process returned 0 (0x0)   execution time : 16.606 s
+Press any key to continue.
+

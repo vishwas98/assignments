@@ -1,0 +1,58 @@
+ASSIGNMENT-05
+ The area of a square is d. What is the area of the circle which has the diagonal of the square as its diameter? Write a program that:
+a)Reads from user: area of a square as d (an integer).
+b)Check if area entered, d is valid.
+c)Find the area of the circle whose diameter is the same as the diagonal of the square.
+d)Find the circumference of the circle whose radius is the same as the diagonal of the square.
+e)Prints with suitable message the area and circumference of the circles respectively.
+
+LOGIC:
+1].To find the diagonal of the square
+    diagonal=sqrt[side*side + side*side]
+2].To find the area of the circle
+    area=3.142or(pi)*(radius*radius)
+2].To find the Circumference of the circle
+    circumference=2*pi(3.142)*radius
+
+PROGRAM:
+
+#include <stdio.h>
+#include <stdlib.h>
+#include<math.h>
+#define PI 3.14159265358979323846
+
+float findArea(float diagonal)//This function returns the area of the circle
+{
+
+    float radius,area;
+    radius=diagonal/2.0;//given the diagonal is same as that of the radius of the circle
+    area=PI*(radius*radius);
+    return area;
+}
+
+int main()
+{
+    int d,side;
+    float diagonal,area,circumference;
+    printf("Enter the area of the square:\n");
+    scanf("%d",&d);
+    side=sqrt(d);;// to find each length of a square
+    diagonal=sqrt(side*side+side*side);
+    area=findArea(diagonal);
+    circumference=2*PI*diagonal;
+    printf("The Area of the circle is : %.2f\n",area);
+    printf("The Circumference of the circle is : %.2f",circumference);
+    return 0;
+}
+
+
+OUTPUT:
+CASE 1:
+Enter the area of the square:
+64
+The Area of the circle is : 100.53
+The Circumference of the circle is : 71.09
+Process returned 0 (0x0)   execution time : 5.886 s
+Press any key to continue.
+
+
